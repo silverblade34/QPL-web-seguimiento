@@ -1,0 +1,17 @@
+.csunderline {
+    font-weight: 300;
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.csunderline:before {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 8px;
+    bottom: -10px;
+    left: 0%;
+    border-radius: 10px;
+    border-bottom: 8px solid rgb(36, 145, 103);
+}

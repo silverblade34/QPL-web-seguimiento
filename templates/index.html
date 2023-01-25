@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--
+Author: Keenthemes
+Product Name: Metronic - Bootstrap 5 HTML, VueJS, React, Angular & Laravel Admin Dashboard Theme
+Purchase: https://1.envato.market/EA4JP
+Website: http://www.keenthemes.com
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
+-->
+<html lang="en">
+<!--begin::Head-->
+
+<head>
+    <base href="">
+    <title>Seguimiento QPL S.A.C.</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Seguimiento QPL S.A.C." />
+    <meta name="keywords" content="seguimiento, online, QPL, digital" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Seguimiento QPL S.A.C." />
+    <meta property="og:url" content="https://qplsac.com" />
+    <meta property="og:site_name" content="Seguimiento | Pedidos" />
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendor Stylesheets(used by this page)-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/prismjs.bundle.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> -->
+    <link href="{{url_for('static', filename='css/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url_for('static', filename='css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cs.css')}}">
+    <!--end::Page Vendor Stylesheets-->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
+    style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!--begin::Main-->
+    <!--begin::Root-->
+
+    <!--begin::Wrapper-->
+
+    <div class="">
+        <!--begin::Content-->
+        <!--begin::Container-->
+        <div id="kt_content_container">
+            <!--begin::HEADER Widget 1-->
+            <div class="card" style="border-bottom: 8px solid #4a6eaf;">
+
+
+                <!--begin::Card body-->
+                <div class="card-body">
+                    <!--begin::Calendar-->
+                    <div class="card-header">
+                        <div class="card-title">
+                            <img src="{{url_for('static', filename='img/logo-hd.svg')}}" class="img-fluid h-80px"
+                                alt="">
+                        </div>
+                        <div class="card-toolbar" style="text-align: center;">
+                            <a href="#" class="btn me-5 text-white" style="background-color: #333333;"><span
+                                    class="svg-icon svg-icon-1"><img
+                                        src="{{url_for('static', filename='img/users.svg')}}" class="img-fluid h-20px"
+                                        style="color:white;"></span>
+                                <h2 class="text-white">Zona de clientes</h2>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!--end::Calendar-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::HEADER Widget 1-->
+            <!--begin::Row-->
+            <div class="row gy-5 g-xl-8 ms-10 me-10">
+
+                <!--begin::Col-->
+                <div class="col-xl-12">
+                    <!--begin::List Widget 5-->
+                    <div class="card card-xl-stretch">
+                        <!--begin::Header-->
+                        </br>
+                        <div class="card-header align-items-center border-0 mt-4">
+
+                            <h1 class="align-items-start flex-column">
+                                <span class="fw-bolder mb-2 text-dark csunderline" style="font-size: 34px;">Seguimiento
+                                    de envíos</span>
+                                <span class="text-muted fw-bold fs-7 ">Consulta</span>
+
+                            </h1>
+
+                            <!-- <h3 class="card-title align-items-start flex-column ">
+                                <span class="fw-bolder mb-2 text-dark ">IDENTIFICADOR DEL CONSUMIDOR RECLAMANTE</span>
+                                <span class="text-muted fw-bold fs-7 ">Rellenar el formulario</span>
+                            </h3> -->
+
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+
+                        <div class="card-body pt-5 ">
+                            <form action="{{url_for('index')}}"
+                                class="row align-items-center d-flex flex-column flex-center" method="POST">
+                                <div class="col-xl-4">
+                                    <h1 class="csunderline" style="font-weight: 500;">Seguimiento</h1>
+                                </div>
+                                </br>
+                                <div class="col-xl-4">
+                                    <div class="form-floating mb-7">
+                                        <input type="text" name="floatingInput" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com" style="font-size: 20px;" />
+                                        <label for="floatingInput">Escriba el número de BL o AWB</label>
+                                        <p class="ls-2">Corresponde al número de seguimiento que desea consultar.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xl-4">
+                                    <button type="submit" href="#" class="btn bg-hover-success text-white"
+                                        style="background-color: #333333; font-size: 16px;">Consultar</button>
+                                </div>
+                                </br>
+                                </br>
+                                {% if hbl %}
+                                <div id="contentHTML">
+                                    <div class="m-0">
+                                        <!--begin::Label-->
+                                        <div class="fw-bolder fs-3 text-gray-800 mb-8">
+                                            <h1 style="color: #2c8d51;">Resultado</h1>
+                                        </div>
+                                        <div class="fw-bolder fs-3 text-gray-800 mb-8">Tracking {{hbl.vch_BLH_Ref}}
+                                        </div>
+                                        <!--end::Label-->
+                                        <!--begin::Row-->
+                                        <div class="row g-5 mb-11">
+                                            <!--end::Col-->
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">Fecha de Consulta:</div>
+                                                <!--end::Label-->
+                                                <!--end::Col-->
+                                                <div class="fw-bolder fs-6 text-gray-800">{{fechaActual}}</div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--end::Col-->
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">N° HB/L:</div>
+                                                <!--end::Label-->
+                                                <!--end::Info-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2">{{hbl.vch_BLH_Ref}}</span>
+                                                </div>
+                                                <!--end::Info-->
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">Línea:</div>
+                                                <!--end::Label-->
+                                                <!--end::Info-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2">{{hbl.vch_Nom_Lin}}</span>
+                                                </div>
+                                                <!--end::Info-->
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">Nave:</div>
+                                                <!--end::Label-->
+                                                <!--end::Info-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2">{{hbl.vch_Nom_Nav}}</span>
+
+                                                </div>
+                                                <!--end::Info-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Row-->
+                                        <!--begin::Row-->
+                                        <div class="row g-5 mb-12">
+                                            <!--end::Col-->
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">Modo:</div>
+                                                <!--end::Label-->
+                                                <!--end::Text-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2" style="color: #2c8d51;">
+                                                        {% if hbl.chr_IoE_Ref == "E" %}
+                                                        Exportación
+                                                        {% else %}
+                                                        Importación
+                                                        {% endif %}
+                                                    </span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">POL:</div>
+                                                <!--end::Label-->
+                                                <!--end::Text-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2">{{hbl.vch_Por_Ref}}</span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">POD:</div>
+                                                <!--end::Label-->
+                                                <!--end::Text-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2">{{hbl.vch_Pde_Ref}}</span>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <!--end::Label-->
+                                                <div class="fw-bold fs-7 text-gray-600 mb-1">Cliente:</div>
+                                                <!--end::Label-->
+                                                <!--end::Text-->
+                                                <div
+                                                    class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                    <span class="pe-2"
+                                                        style="font-size: 20px;">{{hbl.vch_Nom_Cli}}</span>
+
+                                                </div>
+                                                </br>
+                                            </div>
+
+                                            <div class="row d-flex flex-column ">
+                                                <div class="col-xl-3 d-flex flex-row align-items-center mb-2">
+                                                    <!--end::Label-->
+                                                    <div class="fw-bold fs-7 text-gray-600">
+                                                        <span class="pe-2">Fecha de
+                                                            {% if hbl.chr_IoE_Ref == "E" %}
+                                                            Zarpe
+                                                            {% else %}
+                                                            Llegada
+                                                            {% endif %}
+                                                            :</span>
+                                                    </div>
+                                                    <!--end::Label-->
+                                                    <!--end::Text-->
+                                                    <div
+                                                        class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                        <span class="pe-2"
+                                                            style="font-size: 16px;">{{hbl.sdt_FNA_Ref}}</span>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xl-3 d-flex flex-row align-items-center mb-2">
+                                                    <!--end::Label-->
+                                                    <div class="fw-bold fs-7 text-gray-600"><span class="pe-2">Fecha de
+                                                            Transbordo:</span></div>
+                                                    <!--end::Label-->
+                                                    <!--end::Text-->
+                                                    <div
+                                                        class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                        <span class="pe-2" style="font-size: 16px;">
+                                                            {% if hbl.sdt_FTR_Ref %}
+                                                                {{hbl.sdt_FTR_Ref}}
+                                                            {% else %}
+                                                                -
+                                                            {% endif %}
+                                                        </span>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-3 d-flex flex-row align-items-center mb-2">
+                                                    <!--end::Label-->
+                                                    <div class="fw-bold fs-7 text-gray-600 mb-1"><span
+                                                            class="pe-2">Fecha estimada de Arribo:</span></div>
+                                                    <!--end::Label-->
+                                                    <!--end::Text-->
+                                                    <div
+                                                        class="fw-bolder fs-6 text-gray-800 d-flex align-items-center flex-wrap">
+                                                        <span class="pe-2"
+                                                            style="font-size: 16px;">{{hbl.sdt_FES_Ref}}</span>
+
+                                                    </div>
+                                                </div>
+                                                </br>
+                                            </div>
+
+
+                                            <div class="row d-flex flex-column">
+                                                <div class="col-sm-3">
+
+                                                    <div class="fw-bold fs-7 text-gray-600 mb-1">
+                                                        <p style="font-size: 18px;color:#556c81;font-weight: bold;">
+                                                            Contenedores:</p>
+                                                    </div>
+                                                    <div class="fw-bold fs-7 text-gray-600">
+                                                        {% if cont > 0 %}
+                                                            {% for x in containers %}
+                                                            <span class="svg-icon svg-icon-1"><img class="img-fluid h-15px" src="{{url_for('static', filename='img/container.svg')}}"></span>&nbsp;&nbsp;{{x.vch_Num_Con}}<br/>
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            No se encontraron contenedores pendientes<br/>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <!--end::Row-->
+
+                                    </div>
+
+                                </div>
+                                {% endif %}
+                                </br>
+                            </form>
+                        </div>
+
+                        <!--end: Card Body-->
+                    </div>
+                    <!--end: List Widget 5-->
+                </div>
+                <!--end::Col-->
+
+            </div>
+            <!--end::Row-->
+
+
+            <!--begin::Modals-->
+
+            <!--end::Modals-->
+
+        </div>
+        <!--end::Container-->
+
+
+        <!--end::Content-->
+    </div>
+    <div class="row gy-5 g-xl-8 ">
+
+
+
+        <!--begin::Footer-->
+        <div class="footer py-4 d-flex flex-lg-column" id="kt_footer" style="position: fixed;
+        
+        bottom: 0;
+        width: 100%;">
+            <!--begin::Container-->
+            <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between ">
+                <!--begin::Copyright-->
+                <div class="text-dark order-2 order-md-1 ">
+                    <span class="text-muted fw-bold me-1 ">2021©</span>
+                    <a class="text-gray-800 text-hover-primary ">QPL Quality Premium Logistics S.A.C.</a>
+                </div>
+                <!--end::Copyright-->
+                <!--begin::Menu-->
+                <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1 ">
+                    <li class="menu-item ">
+                        <a class="text-gray-800 text-hover-primary ">Calle El Alhelí 292 Urb. Los Sauces, Surquillo,
+                            Lima, Perú</a>
+
+                    </li>
+
+                </ul>
+                <!--end::Menu-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end::Wrapper-->
+
+    <!--end::Root-->
+    <script src="{{url_for('static', filename='js/moment.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='js/sweetalert.js')}}"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+</body>
+<!--end::Body-->
+
+</html>
